@@ -8,7 +8,7 @@ var pipeUp = new Image();
 var pipeBottom = new Image();
 
 bax3.src = "img/bax3.png";
-bg2.src = "img/bg2.png";
+bg2.src = "img/bg2.jpg";
 fg.src = "img/fg.png";
 pipeUp.src = "img/pipeUp.png";
 pipeBottom.src = "img/pipeBottom.png";
