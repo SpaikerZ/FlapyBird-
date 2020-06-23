@@ -19,9 +19,11 @@ vn.src = "img/vn.png";
 ground.src = "img/ground.png";
 
 
-function  play()  {
-ctx.playImage(bg, 0,0);
-
+function  draw()  {
+ctx.playImage(bg, 0, 0);
+ctx.
 } 
 
-ground.onload = play;
+ground.onload = draw;
+
+
