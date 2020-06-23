@@ -1,5 +1,5 @@
-let cvs = document.getElementById("canvas")
-let ctx = cvs.getContext("2d")
+let cvs = document.getElementById("canvas");
+let ctx = cvs.getContext("2d");
 
 
 
@@ -12,16 +12,16 @@ let ground = new Image();
 
 
 
-bird.src = "img/bird.png"
-bg.src = "img/bg.png"
-vv.src = "img/vv.png"
-vn.src = "img/vn.png"
-ground.src = "img/ground.png"
+bird.src = "img/bird.png";
+bg.src = "img/bg.png";
+vv.src = "img/vv.png";
+vn.src = "img/vn.png";
+ground.src = "img/ground.png";
 
 
 function  play()  {
-ctx.playImage(bg, 0,0)
+ctx.playImage(bg, 0,0);
 
 } 
 
-ground.onload = play
+ground.onload = play;
