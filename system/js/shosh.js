@@ -1,26 +1,26 @@
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 
-var bax3 = new Image();
+var migalka = new Image();
 var bg2 = new Image();
 var fg = new Image();
-var pipeUp = new Image();
-var pipeBottom = new Image();
+var pipeUp2 = new Image();
+var pipeBottom2 = new Image();
 
-bax3.src = "img/bax3.png";
+migalka.src = "img/migalka.jpg";
 bg2.src = "img/bg2.jpg";
 fg.src = "img/fg.png";
-pipeUp.src = "img/pipeUp.png";
-pipeBottom.src = "img/pipeBottom.png";
+pipeUp2.src = "img/pipeUp2.png";
+pipeBottom2.src = "img/pipeBottom2.png";
 
 // Звуковые файлы
 var fly = new Audio();
 var score_audio = new Audio();
 
-fly.src = "audio/askme.mp3";
-score_audio.src = "audio/ass.mp3";
+fly.src = "audio/yllya.mp3";
+score_audio.src = "audio/кобыла.mp3";
 
-var gap = 120;
+var gap = 180;
 
 // При нажатии на какую-либо кнопку
 document.addEventListener("keydown", moveUp);
@@ -48,23 +48,23 @@ function draw() {
  ctx.drawImage(bg2, 0, 0);
 
  for(var i = 0; i < pipe.length; i++) {
- ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
- ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
+ ctx.drawImage(pipeUp2, pipe[i].x, pipe[i].y);
+ ctx.drawImage(pipeBottom2, pipe[i].x, pipe[i].y + pipeUp2.height + gap);
 
  pipe[i].x--;
 
- if(pipe[i].x == 125) {
+ if(pipe[i].x == 85) {
  pipe.push({
  x : cvs.width,
- y : Math.floor(Math.random() * pipeUp.height) - pipeUp.height
+ y : Math.floor(Math.random() * pipeUp2.height) - pipeUp2.height
  });
  }
 
  // Отслеживание прикосновений
- if(xPos + bax3.width >= pipe[i].x
- && xPos <= pipe[i].x + pipeUp.width
- && (yPos <= pipe[i].y + pipeUp.height
- || yPos + bax3.height >= pipe[i].y + pipeUp.height + gap) || yPos + bax3.height >= cvs.height - fg.height) {
+ if(xPos + migalka.width >= pipe[i].x
+ && xPos <= pipe[i].x + pipeUp2.width
+ && (yPos <= pipe[i].y + pipeUp2.height
+ || yPos + migalka.height >= pipe[i].y + pipeUp2.height + gap) || yPos + migalka.height >= cvs.height - fg.height) {
  location.reload(); // Перезагрузка страницы
  }
 
@@ -74,8 +74,26 @@ function draw() {
  }
  }
 
+
+
+
+/*
+
+if (score >= 4){
+    
+    migalka.src = "img/драник2.jpg";
+}
+*/
+
+
+
+
+
+
+
+
  ctx.drawImage(fg, 0, cvs.height - fg.height);
- ctx.drawImage(bax3, xPos, yPos);
+ ctx.drawImage(migalka, xPos, yPos);
 
  yPos += grav;
 
@@ -86,4 +104,4 @@ function draw() {
  requestAnimationFrame(draw);
 }
 
-pipeBottom.onload = draw;
+pipeBottom2.onload = draw;
